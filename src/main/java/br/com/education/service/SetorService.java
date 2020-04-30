@@ -14,15 +14,15 @@ public class SetorService {
 	SetorRepository setorRepository;
 
 	public SetorDto newSetor(SetorDto setorDto) {
-		Setor setor = Setor.builder().nomeSetor(setorDto.getNomeSetor()).id(setorDto.getId()).
-				idFuncionario(setorDto.getIdFuncionario()).build();
+		Setor setor = Setor.builder().nomeSetor(setorDto.getNomeSetor()).id(setorDto.getId())
+				.funcionario(setorDto.getFuncionario()).build();
 		setorRepository.save(setor);
 		return setorDto;
 	}
 	
 	public SetorDto getSetorId(long id) {
 		Setor setor = setorRepository.findById(id);
-		return SetorDto.builder().id(setor.getId()).idFuncionario(setor.getIdFuncionario())
+		return SetorDto.builder().id(setor.getId()).funcionario(setor.getFuncionario())
 				.nomeSetor(setor.getNomeSetor()).build();
 			
 	}

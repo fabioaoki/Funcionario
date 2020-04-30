@@ -31,7 +31,6 @@ public class SetorController {
 		
 		FuncionarioDto funcionarioDto = funcionarioService.getById(id);
 		if(Objects.nonNull(funcionarioDto)) {
-			setorDto.setIdFuncionario(funcionarioDto.getId());
 			setorService.newSetor(setorDto);
 			return new ResponseEntity<SetorDto>(setorDto, HttpStatus.CREATED);
 		}
